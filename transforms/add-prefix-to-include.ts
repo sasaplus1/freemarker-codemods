@@ -37,11 +37,11 @@ export function transformer(tokens: IToken[], options: Options): IToken[] {
     let newParams = params;
 
     if (typeof from === 'string' && from === includePath) {
-      newParams = ` "${to}"`;
+      newParams = `"${to}"`;
     } else if (from instanceof RegExp && from.test(includePath)) {
-      newParams = ` "${to}"`;
+      newParams = `"${to}"`;
     } else if (typeof from === 'function') {
-      newParams = ` "${from(includePath)}"`;
+      newParams = `"${from(includePath)}"`;
     }
 
     return { ...token, params: newParams };
