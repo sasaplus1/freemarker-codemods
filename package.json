@@ -22,6 +22,9 @@
     "prettier": "^2.1.2",
     "typescript": "^4.0.5"
   },
+  "directories": {
+    "test": "transforms/"
+  },
   "engines": {
     "node": ">=10"
   },
@@ -41,6 +44,7 @@
     "lint": "run-s lint:eslint lint:prettier",
     "lint:eslint": "eslint --cache --ext .js,.ts .",
     "lint:prettier": "prettier --check --parser typescript './**/*.{js,ts}'",
+    "test": "mocha './**/*.test.ts'",
     "watch": "tsc --watch"
   }
 }
