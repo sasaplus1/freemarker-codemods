@@ -1134,6 +1134,10 @@ freemarker-parser@^1.1.6:
   resolved "https://registry.yarnpkg.com/freemarker-parser/-/freemarker-parser-1.1.6.tgz#0972455bf2b92f3d9cdbf0c16eaee6d9885c19db"
   integrity sha512-Jt98Izk62Uu+21e3yHAdl1dI4d3Zmx5JuVpuT/vxwJLJTwt77ZdU+Fz8p2zjImjT1O5FKU7+3yt3LzbOHOQFJQ==
 
+freemarker-stringifier@sasaplus1/freemarker-stringifier:
+  version "1.0.0"
+  resolved "https://codeload.github.com/sasaplus1/freemarker-stringifier/tar.gz/6c842a7ccece7439ad780b6f2f80c0c430c27f0e"
+
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
