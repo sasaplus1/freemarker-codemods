@@ -14,7 +14,8 @@
     "strict": true,
     "target": "ES5"
   },
-  "include": [
-    "**/*.ts"
+  "exclude": [
+    "**/*.test.ts",
+    "node_modules"
   ]
 }
