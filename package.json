@@ -26,7 +26,7 @@
     "test": "transforms/"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "license": "MIT",
   "private": true,
