@@ -1,7 +1,7 @@
 {
   "name": "freemarker-codemods",
   "description": "codemod collection for FreeMarker template",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "sasa+1 <sasaplus1@gmail.com>",
   "devDependencies": {
     "@types/mocha": "^8.0.3",
