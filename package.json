@@ -23,7 +23,7 @@
     "typescript": "^4.0.5"
   },
   "directories": {
-    "test": "transforms/"
+    "test": "."
   },
   "engines": {
     "node": ">=12"
