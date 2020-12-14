@@ -32,6 +32,10 @@
     "node": ">=12"
   },
   "license": "MIT",
+  "peerDependencies": {
+    "freemarker-parser": "^1.1.6",
+    "freemarker-stringifier": "sasaplus1/freemarker-stringifier"
+  },
   "private": true,
   "readmeFilename": "README.md",
   "repository": {

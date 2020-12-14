@@ -1143,7 +1143,7 @@ freemarker-parser@^1.1.6:
 
 freemarker-stringifier@sasaplus1/freemarker-stringifier:
   version "1.0.0"
-  resolved "https://codeload.github.com/sasaplus1/freemarker-stringifier/tar.gz/6c842a7ccece7439ad780b6f2f80c0c430c27f0e"
+  resolved "https://codeload.github.com/sasaplus1/freemarker-stringifier/tar.gz/372e07d36c282ff4936b1cd26ad23d94e33e2d72"
 
 fs.realpath@^1.0.0:
   version "1.0.0"
