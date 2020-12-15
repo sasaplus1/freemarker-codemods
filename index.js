@@ -8,7 +8,7 @@ const parser = new freemarker_parser_1.Parser();
 const parse = parser.parse.bind(parser);
 async function applyModifiedCode(filePath, params) {
     const code = await fs_1.promises.readFile(filePath, 'utf8');
-    const modifiedCode = transform(code, params);
+    const modifiedCode = transform(code, params, { filePath });
     await fs_1.promises.writeFile(filePath, modifiedCode, 'utf8');
 }
 exports.applyModifiedCode = applyModifiedCode;
@@ -16,12 +16,13 @@ function applyModifiedCodes(filePaths, params) {
     return Promise.all(filePaths.map((filePath) => applyModifiedCode(filePath, params)));
 }
 exports.applyModifiedCodes = applyModifiedCodes;
-function transform(code, params) {
+function transform(code, params, context) {
     const { transformerPath, transformerOptions } = params;
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { transformer } = require(transformerPath);
+    const { transformer } = // eslint-disable-next-line @typescript-eslint/no-var-requires
+     require(transformerPath);
     const { tokens } = parse(code);
-    return freemarker_stringifier_1.stringify(transformer(tokens, transformerOptions));
+    const codemods = { filePath: context.filePath, parse };
+    return freemarker_stringifier_1.stringify(transformer(tokens, transformerOptions, codemods));
 }
 exports.transform = transform;
 //# sourceMappingURL=index.js.map
