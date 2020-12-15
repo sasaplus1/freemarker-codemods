@@ -1,9 +1,13 @@
+import * as debug from 'debug';
+
 import type { IToken } from 'freemarker-parser/types/interface/Tokens';
 
 type Options = {
   from: string | RegExp | ((value: string) => string);
   to?: string;
 };
+
+const log = debug('freemarker-codemods:add-prefix-to-include');
 
 export function transformer(tokens: IToken[], options: Options): IToken[] {
   return tokens.map(function (token) {
@@ -30,6 +34,8 @@ export function transformer(tokens: IToken[], options: Options): IToken[] {
     //   isClose: false
     // }
 
+    log('----- add-prefix-to-include -----');
+
     const includePath = params.replace(/["']+/g, '').trim();
 
     const { from, to } = options;
@@ -44,6 +50,11 @@ export function transformer(tokens: IToken[], options: Options): IToken[] {
       newParams = `"${from(includePath)}"`;
     }
 
-    return { ...token, params: newParams };
+    const newToken = { ...token, params: newParams };
+
+    log('token: %O', token);
+    log('newToken: %O', newToken);
+
+    return newToken;
   });
 }

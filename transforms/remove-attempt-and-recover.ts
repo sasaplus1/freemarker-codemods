@@ -1,6 +1,12 @@
+import * as debug from 'debug';
+
 import type { IToken } from 'freemarker-parser/types/interface/Tokens';
 
+const log = debug('freemarker-codemods:remove-attempt-and-recover');
+
 export function transformer(tokens: IToken[]): IToken[] {
+  log('----- remove-attempt-and-recover -----');
+
   const result: IToken[] = [];
 
   let inAttempt = false;

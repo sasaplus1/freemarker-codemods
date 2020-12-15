@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.transformer = void 0;
+const debug = require("debug");
+const log = debug('freemarker-codemods:remove-attempt-and-recover');
 function transformer(tokens) {
+    log('----- remove-attempt-and-recover -----');
     const result = [];
     let inAttempt = false;
     let inRecover = false;
