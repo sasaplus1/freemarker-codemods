@@ -35,7 +35,7 @@ export function transformer(tokens: IToken[], options: Options): IToken[] {
       isClose: false,
       start,
       text,
-      type: 'Interpolation' as ENodeType.Interpolation
+      type: 'Text' as ENodeType.Text
     };
 
     return newToken;
