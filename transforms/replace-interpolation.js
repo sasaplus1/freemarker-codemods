@@ -27,7 +27,7 @@ function transformer(tokens, options) {
             isClose: false,
             start,
             text,
-            type: 'Interpolation'
+            type: 'Text'
         };
         return newToken;
     });
