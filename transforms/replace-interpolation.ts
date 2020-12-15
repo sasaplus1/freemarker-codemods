@@ -1,3 +1,5 @@
+import * as debug from 'debug';
+
 import type { ENodeType } from 'freemarker-parser/types/Symbols';
 import type { IToken } from 'freemarker-parser/types/interface/Tokens';
 
@@ -6,6 +8,8 @@ type Options = {
   to?: string;
 };
 
+const log = debug('freemarker-codemods:replace-interpolation');
+
 export function transformer(tokens: IToken[], options: Options): IToken[] {
   return tokens.map(function (token) {
     const { type } = token;
@@ -13,6 +17,9 @@ export function transformer(tokens: IToken[], options: Options): IToken[] {
     if (type !== 'Interpolation') {
       return token;
     }
+
+    log('----- replace-interpolation -----');
+    log('token: %O', token);
 
     const { end, params = '', start } = token;
 
@@ -37,6 +44,8 @@ export function transformer(tokens: IToken[], options: Options): IToken[] {
       text,
       type: 'Text' as ENodeType.Text
     };
+
+    log('newToken: %O', newToken);
 
     return newToken;
   });
