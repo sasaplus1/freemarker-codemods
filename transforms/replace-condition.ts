@@ -17,8 +17,6 @@ export function transformer(tokens: IToken[], options: Options): IToken[] {
       return token;
     }
 
-    // NOTE: ifのparamsを書き換えられるやつ
-
     log('----- replace-condition -----');
     log('token: %O', token);
 

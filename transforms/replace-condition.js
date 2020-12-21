@@ -9,7 +9,6 @@ function transformer(tokens, options) {
         if (type !== 'Directive' || !/^if$/i.test(text)) {
             return token;
         }
-        // NOTE: ifのparamsを書き換えられるやつ
         log('----- replace-condition -----');
         log('token: %O', token);
         const { params = '' } = token;
