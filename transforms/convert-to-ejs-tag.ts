@@ -49,6 +49,7 @@ export function transformer(tokens: IToken[]): IToken[] {
       if (isClose) {
         // <#/if> => <%}%>
         newToken.text = '}';
+        newToken.params = undefined;
       } else {
         // <#if condition> => <%if (condition){%>
         newToken.params = `(${params}){`;
