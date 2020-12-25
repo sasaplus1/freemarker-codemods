@@ -39,6 +39,7 @@ function transformer(tokens) {
             if (isClose) {
                 // <#/if> => <%}%>
                 newToken.text = '}';
+                newToken.params = undefined;
             }
             else {
                 // <#if condition> => <%if (condition){%>
