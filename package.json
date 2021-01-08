@@ -54,7 +54,6 @@
     "lint": "run-s lint:eslint lint:prettier",
     "lint:eslint": "eslint --cache --ext .js,.ts .",
     "lint:prettier": "prettier --check --parser typescript './**/*.{js,ts}'",
-    "pretest": "run-s build",
     "test": "mocha './**/*.test.ts'",
     "watch": "tsc --watch"
   }
