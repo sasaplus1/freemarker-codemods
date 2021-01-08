@@ -4,7 +4,7 @@ export declare type Codemods = {
     parse: typeof parse;
 };
 declare type Params = {
-    transformerOptions: any;
+    transformerOptions?: any;
     transformerPath: string;
 };
 declare type Context = {
