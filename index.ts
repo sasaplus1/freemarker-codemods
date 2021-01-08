@@ -55,6 +55,16 @@ export function transform(
   params: Params,
   context: Context
 ): string {
+  const { tokens } = parse(code);
+
+  return stringify(transformTokens(tokens, params, context));
+}
+
+export function transformTokens(
+  tokens: IToken[],
+  params: Params,
+  context: Context
+): IToken[] {
   const { transformerPath, transformerOptions } = params;
 
   const {
@@ -62,9 +72,7 @@ export function transform(
   }: // eslint-disable-next-line @typescript-eslint/no-var-requires
   { transformer: Transformer } = require(transformerPath);
 
-  const { tokens } = parse(code);
-
   const codemods = { filePath: context.filePath, parse };
 
-  return stringify(transformer(tokens, transformerOptions, codemods));
+  return transformer(tokens, transformerOptions, codemods);
 }

@@ -1,3 +1,4 @@
+import type { IToken } from 'freemarker-parser/types/interface/Tokens';
 export declare type Codemods = {
     filePath: string;
     parse: typeof parse;
@@ -13,4 +14,5 @@ declare const parse: (template: string, options?: import("freemarker-parser/type
 export declare function applyModifiedCode(filePath: string, params: Params): Promise<void>;
 export declare function applyModifiedCodes(filePaths: string[], params: Params): Promise<void[]>;
 export declare function transform(code: string, params: Params, context: Context): string;
+export declare function transformTokens(tokens: IToken[], params: Params, context: Context): IToken[];
 export {};
