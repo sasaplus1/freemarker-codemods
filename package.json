@@ -33,6 +33,7 @@
     "node": ">=12"
   },
   "license": "MIT",
+  "main": "./index.js",
   "peerDependencies": {
     "freemarker-parser": "^1.1.6",
     "freemarker-stringifier": "sasaplus1/freemarker-stringifier"
