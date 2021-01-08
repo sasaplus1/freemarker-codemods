@@ -20,7 +20,7 @@ type Transformer = (
 
 type Params = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  transformerOptions: any;
+  transformerOptions?: any;
   transformerPath: string;
 };
 
