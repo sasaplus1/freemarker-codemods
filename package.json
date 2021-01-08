@@ -45,6 +45,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "check-types": "tsc --noEmit",
     "fix": "run-s fix:eslint fix:prettier",
     "fix:eslint": "eslint --ext .js,.ts --fix .",
     "fix:prettier": "prettier --write --parser typescript './**/*.{js,ts}'",
@@ -52,6 +53,7 @@
     "lint": "run-s lint:eslint lint:prettier",
     "lint:eslint": "eslint --cache --ext .js,.ts .",
     "lint:prettier": "prettier --check --parser typescript './**/*.{js,ts}'",
+    "pretest": "run-s build",
     "test": "mocha './**/*.test.ts'",
     "watch": "tsc --watch"
   }
