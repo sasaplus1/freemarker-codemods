@@ -2,6 +2,10 @@ import * as debug from 'debug';
 
 import type { IToken } from 'freemarker-parser/types/interface/Tokens';
 
+type Options = {
+  addSpaceToPrefix: boolean;
+};
+
 const log = debug('freemarker-codemods:normalize-directive-tag');
 
 const emptyElements = [
@@ -39,7 +43,12 @@ function isEmptyAssignDirective(token: IToken): boolean {
   );
 }
 
-export function transformer(tokens: IToken[]): IToken[] {
+export function transformer(
+  tokens: IToken[],
+  options: Options = { addSpaceToPrefix: true }
+): IToken[] {
+  const { addSpaceToPrefix } = options;
+
   return tokens.map(function (token) {
     const { type, text } = token;
 
@@ -56,7 +65,7 @@ export function transformer(tokens: IToken[]): IToken[] {
 
     const newToken: IToken = {
       ...token,
-      endTag: '/>'
+      endTag: addSpaceToPrefix ? ' />' : '/>'
     };
 
     log('newToken: %O', newToken);

@@ -32,7 +32,8 @@ function isEmptyAssignDirective(token) {
         params !== undefined &&
         /^(?:global|assign|local)$/i.test(text));
 }
-function transformer(tokens) {
+function transformer(tokens, options = { addSpaceToPrefix: true }) {
+    const { addSpaceToPrefix } = options;
     return tokens.map(function (token) {
         const { type, text } = token;
         if (type !== 'Directive') {
@@ -45,7 +46,7 @@ function transformer(tokens) {
         log('token: %O', token);
         const newToken = {
             ...token,
-            endTag: '/>'
+            endTag: addSpaceToPrefix ? ' />' : '/>'
         };
         log('newToken: %O', newToken);
         return newToken;
