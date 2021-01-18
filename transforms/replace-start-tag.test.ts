@@ -9,12 +9,14 @@ describe('replace-start-tag', function () {
   const parser = new Parser();
 
   it('can replace FreeMarker start tag', function () {
-    const html = ['<#function>foobar</#function>'].join('');
+    const html = ['<#function>foobar</#function>', '<@baz>'].join('');
 
     const { tokens } = parser.parse(html);
     const newTokens = transformer(tokens, {
       from(value) {
         switch (value) {
+          case '<@':
+            return '<ftl-macro-';
           case '<#':
             return '<ftl-';
           case '</#':
@@ -26,7 +28,10 @@ describe('replace-start-tag', function () {
     });
     const output = stringify(newTokens);
 
-    const expect = ['<ftl-function>foobar</ftl-function>'].join('');
+    const expect = [
+      '<ftl-function>foobar</ftl-function>',
+      '<ftl-macro-baz >'
+    ].join('');
 
     assert(output === expect);
   });
