@@ -15,7 +15,7 @@
     "eslint": "^7.12.1",
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-node": "^11.1.0",
-    "espower-typescript": "^9.0.2",
+    "espower-typescript": "^10.0.0",
     "freemarker-parser": "^1.1.6",
     "freemarker-stringifier": "sasaplus1/freemarker-stringifier",
     "husky": "^4.3.0",
