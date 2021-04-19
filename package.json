@@ -16,7 +16,7 @@
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-node": "^11.1.0",
     "espower-typescript": "^10.0.0",
-    "freemarker-parser": "^1.1.6",
+    "freemarker-parser": "^1.2.1",
     "freemarker-stringifier": "sasaplus1/freemarker-stringifier",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.1",
@@ -35,7 +35,7 @@
   "license": "MIT",
   "main": "./index.js",
   "peerDependencies": {
-    "freemarker-parser": "^1.1.6",
+    "freemarker-parser": "^1.2.1",
     "freemarker-stringifier": "*"
   },
   "private": true,

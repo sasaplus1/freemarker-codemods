@@ -1119,10 +1119,10 @@ flatted@^2.0.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.2.tgz#4575b21e2bcee7434aa9be662f4b7b5f9c2b5138"
   integrity sha512-r5wGx7YeOwNWNlCA0wQ86zKyDLMQr+/RB8xy74M4hTphfmjlijTSSXGuH8rnvKZnfT9i+75zmd8jcKdMR4O6jA==
 
-freemarker-parser@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/freemarker-parser/-/freemarker-parser-1.1.6.tgz#0972455bf2b92f3d9cdbf0c16eaee6d9885c19db"
-  integrity sha512-Jt98Izk62Uu+21e3yHAdl1dI4d3Zmx5JuVpuT/vxwJLJTwt77ZdU+Fz8p2zjImjT1O5FKU7+3yt3LzbOHOQFJQ==
+freemarker-parser@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/freemarker-parser/-/freemarker-parser-1.2.1.tgz#27d63cc4d536f1237e1a22f36805cbf48b369fd4"
+  integrity sha512-vccG7qUN5CmPwZ4a8EzT9ch2TFsMYH0nTSiNnthLOiCEuLZe+l7sm46cwKAAz/wrgTs47qF7jo+cR2OC3E2zPw==
 
 freemarker-stringifier@sasaplus1/freemarker-stringifier:
   version "1.0.0"
